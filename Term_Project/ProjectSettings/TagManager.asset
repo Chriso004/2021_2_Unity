@@ -4,9 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Floor
   - Wall
   - Map
+  - Goal
+  - wall_floor
+  - Floor
+  - SubMenu
   layers:
   - Default
   - TransparentFX

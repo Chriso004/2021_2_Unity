@@ -36,23 +36,29 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\Game_Manager.cs" />
-     <Compile Include="Assets\Script\start_menu\start_menu_camera_ctrl.cs" />
-     <Compile Include="Assets\Script\start_menu\large_text.cs" />
+     <Compile Include="Assets\Script\start_scene\Game_Manager.cs" />
+     <Compile Include="Assets\Script\main_scene\exit_to_mainmenu.cs" />
+     <Compile Include="Assets\Script\start_scene\start_menu_camera_ctrl.cs" />
+     <Compile Include="Assets\Script\main_scene\close_menu.cs" />
+     <Compile Include="Assets\Script\start_scene\large_text.cs" />
+     <Compile Include="Assets\Script\main_scene\main_camera_ctrl.cs" />
      <Compile Include="Assets\Medieval_Toon_Character\Source\Scripts\PlayFaceAnimations.cs" />
+     <Compile Include="Assets\Script\main_scene\stamina_ctrl.cs" />
+     <Compile Include="Assets\Script\main_scene\camera_opening.cs" />
      <Compile Include="Assets\Medieval_Toon_Character\Source\Scripts\FaceAnimations.cs" />
-     <Compile Include="Assets\Script\start_menu\standard_text.cs" />
-     <Compile Include="Assets\Script\start_ctrl.cs" />
-     <Compile Include="Assets\Script\map_generator.cs" />
+     <Compile Include="Assets\Script\start_scene\standard_text.cs" />
+     <Compile Include="Assets\Script\start_scene\start_ctrl.cs" />
+     <Compile Include="Assets\Script\main_scene\map_generator.cs" />
      <Compile Include="Assets\Medieval_Toon_Character\Source\Scripts\Character_Animations.cs" />
-     <Compile Include="Assets\ProgressBar\Script\ProgressBar.cs" />
+     <Compile Include="Assets\Script\main_scene\ProgressBar.cs" />
      <Compile Include="Assets\Fantasy Forest Environment Free Sample\camera_ctrl.cs" />
-     <Compile Include="Assets\Script\start_menu\exit_ctrl.cs" />
-     <Compile Include="Assets\Script\start_menu\expanded_text.cs" />
-     <Compile Include="Assets\Script\move_ctrl.cs" />
+     <Compile Include="Assets\Script\start_scene\exit_ctrl.cs" />
+     <Compile Include="Assets\Script\main_scene\player_goal.cs" />
+     <Compile Include="Assets\Script\start_scene\expanded_text.cs" />
      <Compile Include="Assets\ProgressBar\Script\ProgressBarCircle.cs" />
      <Compile Include="Assets\ProgressBar\Scene\Demo.cs" />
      <Compile Include="Assets\Medieval_Toon_Character\Source\Scripts\ChangeFaces.cs" />
+     <Compile Include="Assets\Script\main_scene\footstep_ctrl.cs" />
      <None Include="Assets\Fantasy Forest Environment Free Sample\StandardNoCulling.shader" />
      <None Include="Assets\Medieval_Toon_Character\ReadMe.txt" />
      <None Include="Assets\Fonts\Nanum_Pen_Script\OFL.txt" />
