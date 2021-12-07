@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class exit_to_mainmenu : MonoBehaviour
 {
+    //예 누를시 메인 메뉴로 이동
     public void OnMouseClick()
     {
         SceneManager.LoadScene("menu_scene");

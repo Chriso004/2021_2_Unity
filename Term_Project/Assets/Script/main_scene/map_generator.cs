@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class map_generator : MonoBehaviour
 {
+    //미로를 자동 생성하는 스크립트
     public GameObject wall_tile;
     public GameObject road_tile;
     public GameObject tree;
     public GameObject goal;
     private int size;
     private int[,] map;
+
+    //맵 탐색시 방향   
     enum DIRECTION
     {
         LEFT = 1,
@@ -18,6 +21,7 @@ public class map_generator : MonoBehaviour
         DOWN
     };
 
+    //맵 구성요소
     enum MAP_FLAG
     {
         WALL,
@@ -26,6 +30,7 @@ public class map_generator : MonoBehaviour
         GOAL
     };
 
+    //난이도에 따라 맵 초기설정
     public void map_initializing(int size)
     {
         this.size = size;
@@ -42,11 +47,13 @@ public class map_generator : MonoBehaviour
             this.map[size - 2, size - 3] = 1;
     }
 
+    //맵 생성시 좌표값이 범위 내에 있는지 확인
     public bool in_range(int x, int y)
     {
         return (x > 0 && x < size - 1) && (y > 0 && y < size - 1);
     }
 
+    //맵 초기설정 완료 후 길 생성
     public void generate_map(int x, int y)
     {
         int next_x = x, next_y = y;
@@ -95,6 +102,7 @@ public class map_generator : MonoBehaviour
         }
     }
 
+    //맵 랜덤 생성시 필요한 난수 함수
     public int[] get_random(int[] direction, int size)
     {
         int i, r, temp;
@@ -110,12 +118,13 @@ public class map_generator : MonoBehaviour
     }
 
 
-
+    //맵 설정 후 타일 오브젝트 배치
     public void setTile()
     {
         float start_x = 0.0f;
         float start_z = 0.0f;
-
+        
+        map[1, 1] = (int)MAP_FLAG.GOAL;
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
@@ -154,8 +163,10 @@ public class map_generator : MonoBehaviour
         }
     }
 
+    //초기설정 값들
     void Start()
     {
+        //Game_Manager에 있는 사이즈로 맵 크기 설정
         int map_size = Game_Manager.instance.size;
         map_initializing(map_size);
         setTile();

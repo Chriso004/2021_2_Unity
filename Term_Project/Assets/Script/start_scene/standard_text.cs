@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class standard_text : MonoBehaviour
 {
+    //표준 난이도 설정
     private GameObject text_box;
     private Text explain_text;
 

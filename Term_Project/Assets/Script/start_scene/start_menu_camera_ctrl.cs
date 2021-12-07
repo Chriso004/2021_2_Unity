@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class start_menu_camera_ctrl : MonoBehaviour
 {
+    //시작 화면 카메라 스크립트
     private float move_speed = 1.0f;
+
     void LateUpdate()
     {
         Vector3 target_point = new Vector3(transform.position.x, 1.5f, transform.position.z);

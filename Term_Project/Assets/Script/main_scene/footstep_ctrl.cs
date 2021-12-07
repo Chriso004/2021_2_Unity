@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class footstep_ctrl : MonoBehaviour
 {
+    //캐릭터 발자국 소리 재생
     public AudioSource src;
     private bool is_move = false;
+
+    //is_move 변수로 이동 중일때만 발소리 재생
     void Update()
     {
         float h = Input.GetAxis("Horizontal");

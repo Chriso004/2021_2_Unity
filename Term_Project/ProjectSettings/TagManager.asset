@@ -10,6 +10,7 @@ TagManager:
   - wall_floor
   - Floor
   - SubMenu
+  - FinishMenu
   layers:
   - Default
   - TransparentFX

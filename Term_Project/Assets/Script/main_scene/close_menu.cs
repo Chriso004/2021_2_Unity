@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class close_menu : MonoBehaviour
 {
+    //아니오 버튼 클릭시 메뉴 닫기
     public void OnMouseClick()
     {
         GameObject target = GameObject.FindGameObjectWithTag("SubMenu");

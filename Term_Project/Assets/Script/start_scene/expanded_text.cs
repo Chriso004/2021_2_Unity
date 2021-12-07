@@ -5,10 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class expanded_text : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //확장 난이도 세팅
     private GameObject text_box;
     private Text explain_text;
-    // Start is called before the first frame update
     public void Start()
     {
         text_box = GameObject.Find("explain_text");
@@ -24,6 +23,7 @@ public class expanded_text : MonoBehaviour
         explain_text.text = "";
     }
 
+    //난이도 설정 후 게임 시작
     public void OnMouseClick()
     {
         Game_Manager m = GameObject.Find("GameManager").GetComponent<Game_Manager>();

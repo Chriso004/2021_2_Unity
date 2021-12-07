@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class ProgressBar : MonoBehaviour
 {
-
+    //에셋스토어에서 받아온 에셋
     [Header("Title Setting")]
     public string Title;
     public Color TitleColor;

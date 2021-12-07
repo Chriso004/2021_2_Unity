@@ -9,6 +9,15 @@ public class Game_Manager : MonoBehaviour
     public int size;
     public float stamina;
     public bool menu_on = false;
+    public int set_time;
+
+    public enum TIME
+    {
+        DAY = 1,
+        AFTERNOON,
+        NIGHT
+    };
+
     public enum DIFFCULT
     {
         standard = 21,
@@ -16,12 +25,14 @@ public class Game_Manager : MonoBehaviour
         expanded = 51
     };
     
+    //삭제되면 안되는 오브젝트이므로 DontDestroyOnLoad 실행
     void Awake()
     {
         instance = this;
         DontDestroyOnLoad(instance);
     }
 
+    //esc누를시 메뉴 생성
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name == "main_scene")
@@ -42,9 +53,11 @@ public class Game_Manager : MonoBehaviour
         }
     }
 
+    //게임 시작
     public void game_start()
     {
         SceneManager.LoadScene("main_scene");
+        set_time = (int)TIME.DAY;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }

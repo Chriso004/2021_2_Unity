@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class large_text : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //지침 난이도 설정
     private GameObject text_box;
     private Text explain_text;
-    // Start is called before the first frame update
+
     public void Start()
     {
         text_box = GameObject.Find("explain_text");

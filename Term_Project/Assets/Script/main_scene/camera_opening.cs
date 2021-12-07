@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class camera_opening : MonoBehaviour
 {
+    //게임 시작시 카메라 오프닝
     private GameObject target;
     private float move_speed = 1.0f;
+
     void Start()
     {
         target = GameObject.Find("Camera");
         camera_set();
     }
 
+    //카메라 이동
     void LateUpdate()
     {
         Vector3 point = new Vector3(5.0f, 5, 5.0f);
@@ -24,6 +27,7 @@ public class camera_opening : MonoBehaviour
         }
     }
 
+    //초기 카메라 위치 설정
     public void camera_set()
     {
         int size = Game_Manager.instance.size;
@@ -31,6 +35,7 @@ public class camera_opening : MonoBehaviour
         target.transform.eulerAngles = new Vector3(0, 45.0f, 0);
     }
 
+    //카메라 이벤트 종료 후 플레이어 스폰
     public void player_spawn()
     {
         GameObject player;

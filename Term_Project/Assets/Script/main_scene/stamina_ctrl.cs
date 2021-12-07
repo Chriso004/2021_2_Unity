@@ -5,20 +5,21 @@ using UnityEngine.UI;
 
 public class stamina_ctrl : MonoBehaviour
 {
+    //스태미너 조절 스크립트
     private ProgressBar pb;
     private GameObject UI;
     private Animator animator;
     private float distance;
-    private float stamina_reduce = 10f;
-    private Image screen;
-    private float fade_speed = 0.1f;
+    private float stamina_reduce = 0.1f;
+    
     void Start()
     {
         setObject();
         distance = 0.0f;
-        Game_Manager.instance.stamina = 0.0f;
+        Game_Manager.instance.stamina = 100.0f;
     }
 
+    //게임 시작시 UI생성
     void setObject()
     {
         UI = Resources.Load<GameObject>("Prefabs/UI/Stamina");
@@ -27,6 +28,7 @@ public class stamina_ctrl : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    //이동 거리에 따라 스태미너 감소
     void Update()
     {
         float h = Input.GetAxis("Horizontal");
@@ -45,10 +47,12 @@ public class stamina_ctrl : MonoBehaviour
 
         pb.BarValue = Game_Manager.instance.stamina;
 
+        //스태미너가 0이 된 뒤 R키를 누르면 스태미너 회복 후 시간 변화
         if(Input.GetKeyDown(KeyCode.R) && Game_Manager.instance.stamina <= 0.0f)
         {
             Game_Manager.instance.stamina = 100.0f;
             animator.speed = 1;
+            GameObject.Find("LightManager").GetComponent<light_ctrl>().set_sun();
         }
     }
 }
